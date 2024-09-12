@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import thayseAndNoah from "../images/thayse-and-noah-bw-50.jpg";
 
 const hrefBrazil = "https://noivos.casar.com/thayse-e-noah";
+const hrefUSA = "";
 ---
 
 <Layout title="Thayse & Noah 💒">
@@ -23,13 +24,16 @@ const hrefBrazil = "https://noivos.casar.com/thayse-e-noah";
         class="mx-auto flex max-w-screen-sm flex-col items-center gap-4 text-center text-lg font-medium"
       >
         <a
-          class="w-full rounded-full bg-white px-5 py-4 shadow-md hover:scale-105 hover:shadow-xl"
-          href="">I am <span class="font-black">American</span> 🇺🇸</a
+          class="w-full rounded-full bg-white px-5 py-4 font-light shadow-md hover:scale-105 hover:shadow-xl"
+          href={hrefUSA}
+          >I am <span class="font-black">American</span>
+          <span class="text-xl">🇺🇸</span></a
         >
         <a
-          class="w-full rounded-full bg-white px-5 py-4 shadow-md hover:scale-105 hover:shadow-xl"
+          class="w-full rounded-full bg-white px-5 py-4 font-light shadow-md hover:scale-105 hover:shadow-xl"
           href={hrefBrazil}
-          >Eu sou <span class="font-black">Brasileiro</span> 🇧🇷</a
+          >Eu sou <span class="font-black">Brasileiro</span>
+          <span class="text-xl">🇧🇷</span></a
         >
       </div>
     </div>
