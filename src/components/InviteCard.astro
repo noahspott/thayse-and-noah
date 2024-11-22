@@ -3,44 +3,108 @@ import Button from "./Button.astro";
 
 const userLanguage = navigator.language;
 
-const venues = [
-  {
-    event: "Ceremony",
-    name: "Capela do Divino Espírito",
-    address: "Praça Getúlio Vargas, 212 - Centro, Florianópolis - SC, Brazil",
-  },
-  {
-    event: "Reception",
-    name: "Lira Tênis Clube",
-    address: "Rua Felipe Schmidt, 636 - Centro, Florianópolis - SC, Brazil",
-  },
-];
+console.log("userLanguage", userLanguage);
+
+const contentEnglish = {
+  dates: ["May 17, 2025", "Saturday 2:30 PM"],
+  venues: [
+    {
+      event: "Ceremony",
+      name: "Capela do Divino Espírito",
+      address: "Praça Getúlio Vargas, 212 - Centro, Florianópolis - SC, Brazil",
+    },
+    {
+      event: "Reception",
+      name: "Lira Tênis Clube",
+      address: "Rua Felipe Schmidt, 636 - Centro, Florianópolis - SC, Brazil",
+    },
+  ],
+  buttons: [
+    {
+      label: "Visit Website",
+      href: "https://noivos.casar.com/thayse-e-noah/",
+    },
+    {
+      label: "Travel Info",
+      href: "/info",
+    },
+  ],
+};
+const contentPortuguese = {
+  dates: ["17 de Maio de 2025", "Sábado, 14h30"],
+  venues: [
+    {
+      event: "Cerimônia",
+      name: "Capela do Divino Espírito",
+      address: "Praça Getúlio Vargas, 212 - Centro, Florianópolis - SC, Brasil",
+    },
+    {
+      event: "Recepção",
+      name: "Lira Tênis Clube",
+      address: "Rua Felipe Schmidt, 636 - Centro, Florianópolis - SC, Brasil",
+    },
+  ],
+  buttons: [
+    {
+      label: "Visitar Site",
+      href: "https://noivos.casar.com/thayse-e-noah/",
+    },
+    {
+      label: "Informações de Viagem",
+      href: "/info",
+    },
+  ],
+};
+
+let content: {
+  dates: string[];
+  venues:
+    | { event: string; name: string; address: string }[]
+    | { event: string; name: string; address: string }[];
+  buttons:
+    | { label: string; href: string }[]
+    | { label: string; href: string }[];
+};
+
+switch (userLanguage) {
+  case "pt-BR":
+    content = contentPortuguese;
+    break;
+  case "en-US":
+    content = contentEnglish;
+    break;
+  default:
+    content = contentEnglish;
+    break;
+}
 ---
 
 <div class="relative z-10 py-20">
   <div
-    class="xs:p-8 max-w-lg bg-gradient-to-br from-white/90 via-white/100 to-white/70 px-4 py-8 duration-200 md:p-10"
+    class="max-w-lg bg-gradient-to-br from-white/90 via-white/100 to-white/70 px-4 py-8 duration-200 xs:p-8 md:p-10"
   >
     <div
-      class="xs:p-8 xs:border-2 border-b-2 border-t-2 border-white px-4 py-8 duration-200 md:p-10"
+      class="border-b-2 border-t-2 border-white px-4 py-8 duration-200 xs:border-2 xs:p-8 md:p-10"
     >
-      <p class="xs:text-4xl playfair mb-1 text-3xl font-black text-dark-2">
-        May 17, 2025
+      <p
+        class="playfair mb-1 text-3xl font-black text-dark-2 xs:text-4xl md:text-5xl"
+      >
+        {content.dates[0]}
       </p>
-      <p class="text-dark-3 mb-8 text-lg uppercase tracking-widest">
-        Saturday 2:30 PM
+      <p class="mb-8 text-lg uppercase tracking-widest text-dark-3">
+        {content.dates[1]}
       </p>
 
       <div class="flex flex-col gap-4">
         {
-          venues.map((venue) => {
+          content.venues.map((venue) => {
             return (
               <div class="flex flex-col gap-1">
-                <p class="text-dark-3 text-sm uppercase tracking-widest">
+                <p class="text-sm uppercase tracking-widest text-dark-3">
                   {venue.event}
                 </p>
-                <p class="xs:text-lg font-bold tracking-wider">{venue.name}</p>
-                <p class="xs:text-base text-sm">{venue.address}</p>
+                <p class="font-bold tracking-wider xs:text-lg">{venue.name}</p>
+                <p class="text-sm xs:text-base">{venue.address}</p>
               </div>
             );
           })
@@ -48,24 +112,19 @@ const venues = [
       </div>
 
       <div class="mt-8 flex flex-col gap-4 font-bold">
-        <!-- <div class="flex gap-4">
-          <Button
-            label="BR"
-            styles="border-2 border-primary-500 text-primary-500 w-1/2 text-center hover:bg-primary-500 hover:text-white"
-            href=""
-          />
-          <Button
-            label="USA"
-            styles="border-2 text-red-400 border-red-400 w-1/2 text-center hover:bg-red-400 hover:text-white"
-            href=""
-          />
-        </div> -->
         <Button
-          label="RSVP"
+          label={content.buttons[0].label}
           styles="text-center hover:text-primary-500 border-2 border-primary-500 hover:bg-transparent bg-primary-500 text-white"
-          href="https://noivos.casar.com/thayse-e-noah/#/rsvp"
+          href={content.buttons[0].label}
+        />
+        <Button
+          label={content.buttons[1].label}
+          styles="text-center text-dark-3 border-2 border-dark-3 bg-transparent hover:bg-dark-3 hover:text-white"
+          href={content.buttons[1].href}
         />
       </div>
     </div>
   </div>
 </div>
+
+<script></script>

@@ -116,9 +116,14 @@ const {
           <li class="flex">
             <slot name="ctaButton" />
           </li>
-          <div class="flex md:hidden">
-            <MenuButton client:load menu={siteInfo.menu} />
-          </div>
+
+          {
+            siteInfo.menu.length != 0 && (
+              <div class="flex md:hidden">
+                <MenuButton client:load menu={siteInfo.menu} />
+              </div>
+            )
+          }
         </ul>
       </nav>
     </Content>

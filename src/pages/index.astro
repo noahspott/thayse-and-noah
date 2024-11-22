@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import Content from "../components/Content.astro";
 import NavPusher from "../components/NavPusher.astro";
 import Button from "../components/Button.astro";
-import InviteCard from "../components/InviteCard.astro";
+import InviteCard from "../components/InviteCard.tsx";
 
 const thayseAndNoah = "/images/thayse-noah-nyc.jpg";
 
@@ -31,13 +31,13 @@ const reception = {
       <img
         src={thayseAndNoah}
         alt=""
-        class="animate-fadeInImage fixed h-full w-full max-w-[1920px] bg-center object-cover opacity-85"
+        class="fixed h-full w-full max-w-[1920px] animate-fadeInImage bg-center object-cover opacity-85"
         style={{ objectPosition: "50% 50%" }}
       />
       <Content>
-        <NavPusher />
+        <!-- <NavPusher /> -->
         <div class="flex content-center">
-          <InviteCard />
+          <InviteCard client:load />
         </div>
       </Content>
     </section>
