@@ -7,7 +7,7 @@ import NavPusher from "../components/NavPusher.astro";
 import Button from "../components/Button.astro";
 import InviteCard from "../components/InviteCard.astro";
 
-import thayseAndNoah from "../images/thayse-noah-nyc.jpg";
+const thayseAndNoah = "/images/thayse-noah-nyc.jpg";
 
 const hrefBrazil = "https://noivos.casar.com/thayse-e-noah";
 const hrefUSA = "";
@@ -28,7 +28,7 @@ const reception = {
 <Layout title="Thayse & Noah - May 17, 2025" description="">
   <main>
     <section class="relative">
-      <Image
+      <img
         src={thayseAndNoah}
         alt=""
         class="animate-fadeInImage fixed h-full w-full max-w-[1920px] bg-center object-cover opacity-85"

@@ -5,12 +5,12 @@ import { Image } from "astro:assets";
 import Content from "../components/Content.astro";
 import NavPusher from "../components/NavPusher.astro";
 
-import thayseAndNoah from "../images/thayse-noah-nyc.jpg";
+const thayseAndNoah = "/images/thayse-noah-nyc.jpg";
 ---
 
 <Layout title="More Info | Thayse & Noah" description="">
   <main class="relative bg-white">
-    <Image
+    <img
       src={thayseAndNoah}
       alt=""
       class="fixed h-full w-full max-w-[1920px] bg-center object-cover opacity-5"
