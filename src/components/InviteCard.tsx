@@ -77,7 +77,7 @@ export default function InviteCard() {
       <div className="max-w-lg bg-gradient-to-br from-white/80 via-white/100 to-white/70 px-4 py-8 duration-200 xs:p-8 md:p-10">
         <div className="border-b-2 border-t-2 border-white/20 px-4 py-8 duration-200 xs:border-2 xs:p-8 md:p-10">
           <img src={logoSrc} alt="Thayse and Noah" className="mx-auto mb-8" />
-          <p className="playfair mb-1 text-3xl font-black text-dark-2">
+          <p className="mb-1 text-3xl font-medium text-dark-2">
             {content.dates[0]}
           </p>
           <p className="mb-8 text-lg uppercase tracking-widest text-dark-3">
@@ -91,10 +91,12 @@ export default function InviteCard() {
                   <p className="text-sm uppercase tracking-widest text-dark-3">
                     {venue.event}
                   </p>
-                  <p className="font-bold tracking-wider xs:text-lg">
+                  <p className="font-medium tracking-wider xs:text-lg">
                     {venue.name}
                   </p>
-                  <p className="text-sm xs:text-base">{venue.address}</p>
+                  <p className="text-sm font-light xs:text-base">
+                    {venue.address}
+                  </p>
                 </div>
               );
             })}
