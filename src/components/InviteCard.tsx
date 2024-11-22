@@ -98,7 +98,7 @@ export default function InviteCard() {
             <Button
               label={content.buttons[0].label}
               styles="text-center hover:text-primary-500 border-2 border-primary-500 hover:bg-transparent bg-primary-500 text-white"
-              href={content.buttons[0].label}
+              href={content.buttons[0].href}
             />
             {language === ENGLISH && (
               <Button
