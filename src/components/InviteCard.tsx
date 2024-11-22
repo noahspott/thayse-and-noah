@@ -1,6 +1,11 @@
 import Button from "./Button";
 import { useState, useEffect } from "react";
 
+const logoPrimary500 = "/logo-primary-500.png";
+const logoDark2 = "/logo-dark-2.png";
+const logoDark3 = "/logo-dark-3.png";
+const logoSrc = logoDark3;
+
 const ENGLISH = "en-US";
 const PORTUGUESE = "pt-BR";
 
@@ -69,9 +74,10 @@ export default function InviteCard() {
 
   return (
     <div className="relative z-10 py-20">
-      <div className="max-w-lg bg-gradient-to-br from-white/90 via-white/100 to-white/70 px-4 py-8 duration-200 xs:p-8 md:p-10">
-        <div className="border-b-2 border-t-2 border-white px-4 py-8 duration-200 xs:border-2 xs:p-8 md:p-10">
-          <p className="playfair mb-1 text-3xl font-black text-dark-2 xs:text-4xl">
+      <div className="max-w-lg bg-gradient-to-br from-white/80 via-white/100 to-white/70 px-4 py-8 duration-200 xs:p-8 md:p-10">
+        <div className="border-b-2 border-t-2 border-white/20 px-4 py-8 duration-200 xs:border-2 xs:p-8 md:p-10">
+          <img src={logoSrc} alt="Thayse and Noah" className="mx-auto mb-8" />
+          <p className="playfair mb-1 text-3xl font-black text-dark-2">
             {content.dates[0]}
           </p>
           <p className="mb-8 text-lg uppercase tracking-widest text-dark-3">
