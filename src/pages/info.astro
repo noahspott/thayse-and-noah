@@ -1,116 +1,202 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Content from "../components/Content.astro";
+import NavPusher from "../components/NavPusher.astro";
+
+import thayseAndNoah from "../images/thayse-noah-nyc-resized.jpg";
 
 const processingTimeForPassport = "3 months";
 ---
 
-<Layout title="More Info | Thayse & Noah">
-  <main class="mx-auto max-w-screen-lg">
-    <div class="text-thay-green-900 flex flex-col gap-8 px-4 py-20">
-      <h1 class="text-4xl font-black md:text-5xl">More Info</h1>
-      <div class="flex flex-col gap-8">
-        <div class="flex flex-col gap-4">
-          <h2 class="text-2xl font-black">What You Need</h2>
-          <ol class="flex max-w-screen-sm flex-col gap-8">
-            <li>
-              <h3 class="text-lg font-black">1. Passport</h3>
-              <p class="">
-                You'll need your passport to travel internationally and to apply
-                for your visa. If you don't have one, get to it ASAP! 😃
-              </p>
-              <div class="mt-3 flex flex-col gap-2 text-sm">
-                <div>
-                  <h4 class="font-bold">Deadline:</h4>
-                  <p class="text-thay-green-800">January 17, 2025</p>
+<Layout title="More Info | Thayse & Noah" description="">
+  <main class="relative bg-white">
+    <Image
+      src={thayseAndNoah}
+      alt=""
+      class="fixed h-full w-full max-w-[1920px] bg-center object-cover opacity-5"
+      style={{ objectPosition: "50% 50%" }}
+    />
+    <Content>
+      <NavPusher />
+      <div class="relative z-10 flex flex-col gap-8 py-20">
+        <h1 class="xs:text-4xl mb-1 text-3xl font-black text-dark-2">
+          More Info
+        </h1>
+        <div class="flex flex-col gap-16">
+          <div class="flex flex-col gap-4">
+            <h2 class="text-2xl font-black">What You Need</h2>
+            <ol class="flex max-w-screen-sm flex-col gap-8">
+              <li>
+                <h3 class="text-lg font-black">1. Passport</h3>
+                <p class="">
+                  You'll need your passport to travel internationally and to
+                  apply for your visa. If you don't have one, get to it ASAP! 😃
+                </p>
+                <div class="mt-3 flex flex-col gap-2 text-sm">
+                  <div>
+                    <h4 class="font-bold">Deadline:</h4>
+                    <p class="text-thay-green-800">January 17, 2025</p>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">Resources:</h4>
+                    <a
+                      href="https://travel.state.gov/content/travel/en/passports.html"
+                      class="text-thay-green-800 underline transition duration-300 ease-in-out hover:text-thay-green-900"
+                      >Get or replace your passport</a
+                    >
+                  </div>
                 </div>
-                <div>
-                  <h4 class="font-bold">Resources:</h4>
-                  <a
-                    href="https://travel.state.gov/content/travel/en/passports.html"
-                    class="text-thay-green-800 hover:text-thay-green-900 underline transition duration-300 ease-in-out"
-                    >Get or replace your passport</a
-                  >
+              </li>
+              <li>
+                <h3 class="text-lg font-black">2. Flight Tickets</h3>
+                <p class="">
+                  Below you can find our recommended departure dates for your
+                  flights. If you'd like to join us, after the wedding, we'll be
+                  doing some light sight-seeing in the area. All are welcome!
+                  <br /><br />
+                  <span class="font-bold">Vacation Trip Length</span>
+                  <br />
+                  <span> May 14, 2025 (Wed) - May 21, 2025 (Wed) </span>
+                  <br /><br />
+                  <span class="font-bold">Minimum Trip Length</span>
+                  <br />
+                  <span> May 15, 2025 (Thu) - May 19, 2025 (Sun) </span>
+                </p>
+                <div class="mt-3 flex flex-col gap-2 text-sm">
+                  <div>
+                    <h4 class="font-bold">Deadline:</h4>
+                    <p class="text-thay-green-800">February 17, 2025</p>
+                  </div>
+                  <div class="flex flex-col">
+                    <h4 class="font-bold">Resources:</h4>
+                    <a
+                      href="https://www.delta.com/"
+                      class="text-thay-green-800 underline transition duration-300 ease-in-out hover:text-thay-green-900"
+                    >
+                      Delta
+                    </a>
+                    <a
+                      href="https://www.aa.com/en-us/"
+                      class="text-thay-green-800 underline transition duration-300 ease-in-out hover:text-thay-green-900"
+                    >
+                      American Airlines
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <h3 class="text-lg font-black">2. Flight Tickets</h3>
-              <p class="">
-                After flights and layovers, the travel day usually ends up
-                taking the whole day. So we recommend having a recovery day
-                before the wedding. We're inviting you to explore Brazil with us
-                in the 3 days following the wedding.
-                <br /><br />
-                <span class="font-bold">Vacation Length</span>
-                <br />
-                <span> May 14, 2025 (Wed) - May 21, 2025 (Wed) </span>
-                <br /><br />
-                <span class="font-bold">Minimum Length</span>
-                <br />
-                <span> May 15, 2025 (Thu) - May 19, 2025 (Sun) </span>
-              </p>
-              <div class="mt-3 flex flex-col gap-2 text-sm">
-                <div>
-                  <h4 class="font-bold">Deadline:</h4>
-                  <p class="text-thay-green-800">February 17, 2025</p>
+              </li>
+              <li>
+                <h3 class="text-lg font-black">3. Hotel / Airbnb</h3>
+                <p class="">
+                  My beautiful fiancée compiled a list of Airbnbs and hotels in
+                  safe areas. Check these out and check in with others to see if
+                  it makes sense to share an Airbnb.
+                </p>
+                <div class="mt-3 flex flex-col gap-2 text-sm">
+                  <div>
+                    <h4 class="font-bold">Deadline:</h4>
+                    <p class="text-thay-green-800">February 17, 2025</p>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">Resources:</h4>
+                    <a
+                      href="https://docs.google.com/spreadsheets/d/1Vl94JjOoPZrHWu5obTVI1-8YJjCsAbb2t2Kz2YF2tpw/edit?usp=sharing"
+                      class="text-thay-green-800 underline transition duration-300 ease-in-out hover:text-thay-green-900"
+                      >Thay's Hotels and Airbnbs</a
+                    >
+                  </div>
                 </div>
-                <div>
-                  <h4 class="font-bold">Resources:</h4>
-                  <a
-                    href=""
-                    class="text-thay-green-800 hover:text-thay-green-900 underline transition duration-300 ease-in-out"
-                  ></a>
+              </li>
+              <li>
+                <h3 class="text-lg font-black">4. Travel Visa</h3>
+                <p class="">
+                  Brazil now requires Americans to apply for a visa to visit.
+                  Fortunately this is all digital and shouldn't be too much of a
+                  pain. The visa is valid for 2 years after issuance date.
+                </p>
+                <div class="mt-3 flex flex-col gap-2 text-sm">
+                  <div>
+                    <h4 class="font-bold">Deadline:</h4>
+                    <p class="text-thay-green-800">March 17, 2025</p>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">Resources:</h4>
+                    <a
+                      href="https://brazil.vfsevisa.com/"
+                      class="text-thay-green-800 underline transition duration-300 ease-in-out hover:text-thay-green-900"
+                      >Apply for your e-visa here</a
+                    >
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <h3 class="text-lg font-black">3. Hotel / Airbnb</h3>
-              <p class="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                molestiae maxime dicta doloremque ipsa culpa repellendus dolor
-                unde sunt! Officiis temporibus optio sequi, velit doloribus id
-                ipsa fuga iste labore.
-              </p>
-              <div class="mt-3 flex flex-col gap-2 text-sm">
-                <div>
-                  <h4 class="font-bold">Deadline:</h4>
-                  <p class="text-thay-green-800">February 17, 2025</p>
+              </li>
+            </ol>
+          </div>
+          <div class="flex flex-col gap-4">
+            <h2 class="text-2xl font-black">
+              Notes and Tips About Visiting Brazil
+            </h2>
+            <ol class="flex max-w-screen-sm flex-col gap-8">
+              <li>
+                <h3 class="text-lg font-black">1. Eu não falo inglês</h3>
+                <p class="">Most Brazilians do not speak english. Good luck!</p>
+                <div class="mt-3 flex flex-col gap-2 text-sm">
+                  <div>
+                    <h4 class="font-bold">Tips:</h4>
+                    <ul class="list-disc ps-4 text-thay-green-800">
+                      <li class="">
+                        <p class="">
+                          Download the Google Translate app on your phone. In
+                          the app, download Portuguese (Brazil), for use without
+                          internet.
+                        </p>
+                      </li>
+                      <li class="">
+                        <p class="">
+                          Consider learning some Portuguese basics like "Hi",
+                          "Thank you", and "Do you speak english?".
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-col">
+                    <h4 class="font-bold">Resources:</h4>
+                    <a
+                      href="https://www.duolingo.com/"
+                      class="text-thay-green-800 underline transition duration-300 ease-in-out hover:text-thay-green-900"
+                      >Learn Portuguese Basics with Duolingo</a
+                    >
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.google.android.apps.translate&hl=en_US&pli=1"
+                      class="text-thay-green-800 underline transition duration-300 ease-in-out hover:text-thay-green-900"
+                      >Download Google Translate - Android</a
+                    >
+                    <a
+                      href="https://apps.apple.com/us/app/google-translate/id414706506"
+                      class="text-thay-green-800 underline transition duration-300 ease-in-out hover:text-thay-green-900"
+                      >Download Google Translate - iPhone</a
+                    >
+                  </div>
                 </div>
-                <div>
-                  <h4 class="font-bold">Resources:</h4>
-                  <a
-                    href=""
-                    class="text-thay-green-800 hover:text-thay-green-900 underline transition duration-300 ease-in-out"
-                  ></a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <h3 class="text-lg font-black">4. Travel Visa</h3>
-              <p class="">
-                Brazil now requires Americans to apply for a visa to visit.
-                Fortunately this is all digital and shouldn't be too much of a
-                pain. The visa is valid for 2 years after issuance date.
-              </p>
-              <div class="mt-3 flex flex-col gap-2 text-sm">
-                <div>
-                  <h4 class="font-bold">Deadline:</h4>
-                  <p class="text-thay-green-800">March 17, 2025</p>
-                </div>
-                <div>
-                  <h4 class="font-bold">Resources:</h4>
-                  <a
-                    href="https://brazil.vfsevisa.com/"
-                    class="text-thay-green-800 hover:text-thay-green-900 underline transition duration-300 ease-in-out"
-                    >Apply for your e-visa here</a
-                  >
-                </div>
-              </div>
-            </li>
-          </ol>
+              </li>
+              <li>
+                <h3 class="text-lg font-black">2. No Need to Tip</h3>
+                <p class="">
+                  Brazil doesn't have the tipping culture that we do in the
+                  States. Just be polite and make a good name for us Americans.
+                </p>
+              </li>
+              <li>
+                <h3 class="text-lg font-black">3. No Toilet Paper in Toilet</h3>
+                <p class="">
+                  There will be a small trash can next to the toilet. Put it
+                  there, or go to jail.
+                </p>
+              </li>
+            </ol>
+          </div>
+          <!-- <h2 class="text-2xl font-black">About The Trip</h2> -->
         </div>
-        <!-- <h2 class="text-2xl font-black">About The Trip</h2> -->
       </div>
-    </div>
+    </Content>
   </main>
 </Layout>

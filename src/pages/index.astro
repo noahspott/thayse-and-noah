@@ -2,40 +2,44 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
-import thayseAndNoah from "../images/thayse-and-noah-bw-50.jpg";
+import thayseAndNoah from "../images/thayse-noah-nyc-resized.jpg";
+import Content from "../components/Content.astro";
+import NavPusher from "../components/NavPusher.astro";
+import Button from "../components/Button.astro";
+import InviteCard from "../components/InviteCard.astro";
 
 const hrefBrazil = "https://noivos.casar.com/thayse-e-noah";
 const hrefUSA = "";
+
+const date = new Date("May 17, 2025 14:30:00");
+
+const ceremony = {
+  name: "Capela do Divino Espírito",
+  address: "Praça Getúlio Vargas, 212 - Centro, Florianópolis - SC, Brazil",
+};
+
+const reception = {
+  name: "Lira Tênis Clube",
+  address: "Rua Felipe Schmidt, 636 - Centro, Florianópolis - SC, Brazil",
+};
 ---
 
-<Layout title="Thayse & Noah 💒">
-  <main class="py-20">
-    <div class="flex flex-col items-center gap-8">
+<Layout title="Thayse & Noah - May 17, 2025" description="">
+  <main>
+    <section class="relative">
       <Image
         src={thayseAndNoah}
-        alt="Thayse & Noah"
-        class="max-w-72 rounded-3xl border-4 border-white"
+        alt=""
+        class="animate-fadeInImage fixed h-full w-full max-w-[1920px] bg-center object-cover opacity-85"
+        style={{ objectPosition: "50% 50%" }}
       />
-      <div class="flex flex-col gap-2 text-center font-black text-white">
-        <h1 class="text-3xl md:text-5xl">Thayse & Noah</h1>
-        <h2 class="text-xl md:text-2xl">May 17, 2025</h2>
-      </div>
-      <div
-        class="mx-auto flex max-w-screen-sm flex-col items-center gap-4 text-center text-lg font-medium"
-      >
-        <a
-          class="w-full rounded-full bg-white px-5 py-4 font-light shadow-md hover:scale-105 hover:shadow-xl"
-          href={hrefUSA}
-          >I am <span class="font-black">American</span>
-          <span class="text-xl">🇺🇸</span></a
-        >
-        <a
-          class="w-full rounded-full bg-white px-5 py-4 font-light shadow-md hover:scale-105 hover:shadow-xl"
-          href={hrefBrazil}
-          >Eu sou <span class="font-black">Brasileiro</span>
-          <span class="text-xl">🇧🇷</span></a
-        >
-      </div>
-    </div>
+      <Content>
+        <NavPusher />
+        <div class="flex content-center">
+          <InviteCard />
+        </div>
+      </Content>
+    </section>
+    <div></div>
   </main>
 </Layout>

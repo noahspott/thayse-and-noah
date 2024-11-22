@@ -1,0 +1,26 @@
+---
+interface Props {
+  href?: string;
+  label: string;
+  styles?: string;
+}
+
+const { href, label, styles = "" } = Astro.props;
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      class={`select-none px-4 py-4 text-sm uppercase tracking-[1.25px] hover:cursor-pointer ${styles} duration-100 hover:opacity-90 hover:shadow-md`}
+    >
+      {label}
+    </a>
+  ) : (
+    <div
+      class={`select-none px-4 py-4 text-sm uppercase tracking-[1.25px] hover:cursor-pointer ${styles} duration-100 hover:opacity-90 hover:shadow-md`}
+    >
+      {label}
+    </div>
+  )
+}

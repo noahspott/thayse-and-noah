@@ -1,25 +1,120 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/Button.astro";
+import NavPusher from "../components/NavPusher.astro";
+
 interface Props {
   title: string;
+  description: string;
 }
 
-import "../css/global.css";
+const { title, description } = Astro.props;
 
-const { title } = Astro.props;
+const siteName = "Thayse and Noah";
+
+const logoLight = "/logo-light.png";
+const logoDark = "/logo-dark.png";
+
+const siteInfo = {
+  name: siteName,
+  logo: logoDark,
+  phone: "",
+  email: "",
+  location: "",
+  description: "",
+  menu: [
+    {
+      display: "Home",
+      href: "/",
+    },
+    {
+      display: "More Info",
+      href: `/info`,
+    },
+    // {
+    //   display: "RSVP",
+    //   href: `/endorsements`,
+    // },
+    // {
+    //   display: "Get Involved",
+    //   href: "/get-involved",
+    // },
+  ],
+  socials: [
+    // {
+    //   platform: "github",
+    //   url: "https://github.com/noahspott",
+    // },
+    // {
+    //   platform: "linkedin",
+    //   url: "https://linkedin.com/in/noahspott",
+    // },
+  ],
+};
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
     <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <title>{title}</title>
   </head>
-  <body class="bg-thay-green-500">
+  <body class="min-w-80 bg-white">
+    <Header
+      siteInfo={siteInfo}
+      nameStyles="font-semibold text-md sm:text-lg text-primary-500"
+      menuItemStyles="tracking-widest font-light uppercase text-sm text-dark-1"
+      containerStyles="bg-white/95 shadow-md"
+    >
+      <!-- <Button
+        slot="ctaButton"
+        href="/donate"
+        label="RSVP"
+        styles="text-white px-8 duration-200 bg-primary-500 hover:bg-accent-500"
+      /> -->
+    </Header>
+
     <slot />
+    <!-- <Footer siteInfo={{ ...siteInfo, logo: logoLight }} /> -->
   </body>
 </html>
+<style is:global>
+  :root {
+    --playfair: "Playfair Display", serif;
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: "#011C3B";
+    min-width: 320px;
+    max-width: 1920px;
+    overscroll-behavior: none;
+    margin: 0 auto;
+  }
+  code {
+    font-family:
+      Playfair Display,
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+
+  .playfair {
+    font-family: var(--playfair);
+  }
+</style>
