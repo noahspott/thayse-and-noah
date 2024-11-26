@@ -14,7 +14,7 @@ const contentEnglish = {
   venues: [
     {
       event: "Ceremony",
-      name: "Capela do Divino Espírito",
+      name: "Capela do Divino Espírito Santo",
       address: "Praça Getúlio Vargas, 212 - Centro, Florianópolis - SC, Brazil",
     },
     {
@@ -39,7 +39,7 @@ const contentPortuguese = {
   venues: [
     {
       event: "Cerimônia",
-      name: "Capela do Divino Espírito",
+      name: "Capela do Divino Espírito Santo",
       address: "Praça Getúlio Vargas, 212 - Centro, Florianópolis - SC, Brasil",
     },
     {
