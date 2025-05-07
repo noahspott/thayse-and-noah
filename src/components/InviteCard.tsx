@@ -27,10 +27,20 @@ const contentEnglish = {
     {
       label: "Visit Website",
       href: "https://noivos.casar.com/thayse-e-noah/",
+      className:
+        "text-center hover:text-primary-500 border-2 border-primary-500 hover:bg-transparent bg-primary-500 text-white",
+    },
+    {
+      label: "Send a Gift",
+      href: "https://www.honeyfund.com/site/thayse-and-noah",
+      className:
+        "text-center hover:text-red-400 border-red-400 border-2 hover:border-red-400 hover:bg-transparent bg-red-400 text-white",
     },
     {
       label: "Travel Info",
       href: "/info",
+      className:
+        "text-center text-dark-3 border-2 border-dark-3 bg-transparent hover:bg-dark-3 hover:text-white",
     },
   ],
 };
@@ -52,10 +62,14 @@ const contentPortuguese = {
     {
       label: "Visitar Site",
       href: "https://noivos.casar.com/thayse-e-noah/",
+      className:
+        "text-center hover:text-primary-500 border-2 border-primary-500 hover:bg-transparent bg-primary-500 text-white",
     },
     {
       label: "Informações de Viagem",
       href: "/info",
+      className:
+        "text-center text-dark-3 border-2 border-dark-3 bg-transparent hover:bg-dark-3 hover:text-white",
     },
   ],
 };
@@ -74,7 +88,7 @@ export default function InviteCard() {
 
   return (
     <div className="relative z-10 py-20">
-      <div className="max-w-lg bg-gradient-to-br from-white/80 via-white/100 to-white/70 px-4 py-8 duration-200 xs:p-8 md:p-10">
+      <div className="max-w-lg bg-gradient-to-br from-white/80 via-white/90 to-white/70 px-4 py-8 duration-200 xs:p-8 md:p-10">
         <div className="border-b-2 border-t-2 border-white/20 px-4 py-8 duration-200 xs:border-2 xs:p-8 md:p-10">
           <img src={logoSrc} alt="Thayse and Noah" className="mx-auto mb-8" />
           <p className="mb-1 text-3xl font-medium text-dark-2">
@@ -105,14 +119,21 @@ export default function InviteCard() {
           <div className="mt-8 flex flex-col gap-4 font-bold">
             <Button
               label={content.buttons[0].label}
-              styles="text-center hover:text-primary-500 border-2 border-primary-500 hover:bg-transparent bg-primary-500 text-white"
+              styles={content.buttons[0].className}
               href={content.buttons[0].href}
             />
             {language === ENGLISH && (
               <Button
                 label={content.buttons[1].label}
-                styles="text-center text-dark-3 border-2 border-dark-3 bg-transparent hover:bg-dark-3 hover:text-white"
+                styles={content.buttons[1].className}
                 href={content.buttons[1].href}
+              />
+            )}
+            {language === ENGLISH && (
+              <Button
+                label={content.buttons[2].label}
+                styles={content.buttons[2].className}
+                href={content.buttons[2].href}
               />
             )}
           </div>

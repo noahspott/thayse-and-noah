@@ -10,6 +10,8 @@ import InviteCard from "../components/InviteCard.tsx";
 const thayseAndNoah = "/images/thayse-noah-nyc.jpg";
 
 const date = new Date("May 17, 2025 14:30:00");
+
+import bgImage from "../images/PWT&N-96-cut-2.png";
 ---
 
 <Layout
@@ -18,12 +20,21 @@ const date = new Date("May 17, 2025 14:30:00");
 >
   <main>
     <section class="relative">
+      <Image
+        src={bgImage}
+        alt="A beautiful couple in the mountains"
+        class="fixed h-full max-h-[1000px] w-full max-w-[1920px] animate-fadeInImage object-cover opacity-85"
+        style={{
+          objectPosition: "60% 60%",
+        }}
+      />
+      <!-- 
       <img
         src={thayseAndNoah}
         alt=""
         class="fixed h-full w-full max-w-[1920px] animate-fadeInImage bg-center object-cover opacity-85"
         style={{ objectPosition: "50% 50%" }}
-      />
+      /> -->
       <Content>
         <!-- <NavPusher /> -->
         <div class="flex content-center">
