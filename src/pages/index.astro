@@ -19,29 +19,22 @@ import bgImage from "../images/PWT&N-96-cut-2.png";
   description="“Love bears all things, believes all things, hopes all things, endures all things.” - 1 Corinthians 13:7"
 >
   <main>
-    <section class="relative">
+    <section class="relative xl:grid xl:grid-cols-2">
       <Image
         src={bgImage}
         alt="A beautiful couple in the mountains"
-        class="fixed h-full max-h-[1000px] w-full max-w-[1920px] animate-fadeInImage object-cover opacity-85"
+        class="fixed h-full max-h-[1000px] w-full max-w-[1920px] animate-fadeInImage object-cover opacity-85 xl:static"
         style={{
           objectPosition: "60% 60%",
         }}
       />
-      <!-- 
-      <img
-        src={thayseAndNoah}
-        alt=""
-        class="fixed h-full w-full max-w-[1920px] animate-fadeInImage bg-center object-cover opacity-85"
-        style={{ objectPosition: "50% 50%" }}
-      /> -->
-      <Content>
-        <!-- <NavPusher /> -->
-        <div class="flex content-center">
-          <InviteCard client:load />
-        </div>
-      </Content>
+      <div class="order-first">
+        <Content>
+          <div class="flex content-center">
+            <InviteCard client:load />
+          </div>
+        </Content>
+      </div>
     </section>
-    <div></div>
   </main>
 </Layout>

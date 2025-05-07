@@ -87,7 +87,7 @@ export default function InviteCard() {
   }, [language]);
 
   return (
-    <div className="relative z-10 py-20">
+    <div className="relative z-10 py-8 transition-all duration-300">
       <div className="max-w-lg bg-gradient-to-br from-white/80 via-white/90 to-white/70 px-4 py-8 duration-200 xs:p-8 md:p-10">
         <div className="border-b-2 border-t-2 border-white/20 px-4 py-8 duration-200 xs:border-2 xs:p-8 md:p-10">
           <img src={logoSrc} alt="Thayse and Noah" className="mx-auto mb-8" />
